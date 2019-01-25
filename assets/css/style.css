@@ -1,0 +1,33 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #db6423;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+}
+.jumbotron,.card-body, .card{
+    
+    text-align: center;
+    /* background: rgb(250, 250, 132); */
+    font-weight: bolder; 
+    background-color: #db8a5e;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+}
+
+
+.display-3{
+    
+    padding: 0%;
+    margin: 0%;
+}
+.fa-person-booth{
+    color: #fa5114;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+}
+.img{
+
+    background-color: #db8a5e;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+
+}
+.btn{
+    margin-top:2%; 
+}
