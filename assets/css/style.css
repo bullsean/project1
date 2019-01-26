@@ -1,0 +1,38 @@
+.top-header {
+    font-family: 'PT Sans Narrow', cursive;
+    margin-top: 10px;
+}
+
+#name{
+    font-family: 'Viga', 'cursive';
+}
+
+#city{
+    font-family: 'Viga', 'cursive';
+}
+
+#state{
+    font-family: 'Viga', 'cursive';
+}
+
+.button {
+    font-family: 'PT Sans Narrow', cursive;
+}
+
+#name-input {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#city-input {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#state-choice {
+    width: 40%;
+}
+
+.middle-main {
+    margin-top: 20px;
+}
