@@ -1,7 +1,7 @@
 $("#submit-button").on("click", function() {
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
-    var city = $("#cityName").val();
+    var city = $("#city-input").val();
     var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
     var zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city
 
@@ -19,7 +19,7 @@ $("#submit-button").on("click", function() {
             // "User-Agent":  "My Library (https://github.com/bullsean/project1)",
             "Accept" : "application/json"
         }
-    }).done(function(response) {
+    }).then(function(response) {
         console.log(response);
     });
 
