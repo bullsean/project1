@@ -1,30 +1,47 @@
-$(document).ready(function(){
-    $(".btn").on("click", function(event){
-        var city = $("#city").val();
-        
-        event.preventDefault();
-        if(city === ""){
-            alert("Please Enter the City Name. Thank you")
+$("#submit-button").on("click", function() {
+    var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
+    var jokeQueryURL = "https://icanhazdadjoke.com/";
+    var city = $("#city-input").val();
+    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
+    var zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city
+
+    $.ajax({
+        url: triviaQueryURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+    });
+
+    $.ajax({
+        url: jokeQueryURL,
+        method: "GET",
+        headers: {
+            // "User-Agent":  "My Library (https://github.com/bullsean/project1)",
+            "Accept" : "application/json"
         }
-        else{
-            queryUrl= 'https://newsapi.org/v2/top-headlines?' + 'country=' + city + '&' +
-            'apiKey=7366515f5173476eb141e59de078bc65';
-            $.ajax({
-                url:queryUrl,
-                method: "GET"
-            }).then (function(response){
-                console.log(response);
-                $("#news").append(response);
-                // location.href = "main.html";
-            })
+    }).then(function(response) {
+        console.log(response);
+    });
+
+
+    $.ajax({
+        url: weatherQueryURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+    });
+
+    $.ajax({
+        url: zomatoQueryURL,
+        method: "GET",
+        headers: {
+            "user-key": "a7aef2e9343cea29c41366c8092a682f"
         }
+    }).then(function(response) {
+        console.log(response);
+    });
 
-    })
+});
 
-    $("#back").on("click", function(){
 
-        location.href = "index.html";
-
-    })
-})
 
