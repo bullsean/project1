@@ -1,4 +1,4 @@
-$("#weather").on("click", function() {
+$("#submit-button").on("click", function() {
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
     var city = $("#cityName").val();
