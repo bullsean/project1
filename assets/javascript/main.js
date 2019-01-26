@@ -16,7 +16,6 @@ $("#submit-button").on("click", function() {
         url: jokeQueryURL,
         method: "GET",
         headers: {
-            // "User-Agent":  "My Library (https://github.com/bullsean/project1)",
             "Accept" : "application/json"
         }
     }).then(function(response) {
