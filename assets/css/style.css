@@ -40,4 +40,27 @@
 }
 body{
     color: whitesmoke;
+    background-repeat: repeat-y;
+}
+img{
+    width: 100%;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 1rem;
+}
+
+.card{
+    padding: 2%;
+    background-color: transparent;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+.card-footer{
+    background: #d1d0d08a;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0.50rem !important;
+}
+
+.text-muted {
+    color: #000000!important;
 }
