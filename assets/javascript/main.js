@@ -1,12 +1,14 @@
 $("#submit-button").on("click", function() {
+    $("#input-search").addClass("fadeOutUpBig");
+    $('.card-columns').html('');
     $("#row-weather").html('');
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
     var city = $("#city-input").val();
     var keyword = $("#keyword-input").val();
-    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/forecast?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
     var zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city;
-    var newsUrl= 'https://newsapi.org/v2/top-headlines?q=' + keyword + '&apiKey=7366515f5173476eb141e59de078bc65';
+    var newsUrl = 'https://newsapi.org/v2/top-headlines?source=bbc-news&q='+ keyword +'&apiKey=7366515f5173476eb141e59de078bc65';
+    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/forecast?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
 
     $.ajax({
         url: triviaQueryURL,
@@ -21,8 +23,12 @@ $("#submit-button").on("click", function() {
         headers: {
            "Accept" : "application/json"
         }
-    }).then(function(response) {
-        console.log(response);
+    }).then(function(joke) {
+        console.log(joke);
+        $("#row-joke").append("<div class='card'><h2>Dad Joke</h2><div class='card-body'><p>" + joke.joke + "</p></div></div>")
+
+                
+            
     });
 
 
@@ -63,15 +69,23 @@ $("#submit-button").on("click", function() {
     }).then (function(response){
         console.log(response);
         for (var j = 0; j < response.articles.length; j++) {
+
+            var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
+            var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
+            var title = ("<p style='font-weight: bolder;'>Title: " +response.articles[j].title + "</p>"+"<br>");
+            var description = ("Description: " +response.articles[j].description + "<br>");
+            var published = ("Published on: " +response.articles[j].publishedAt + "<br>");
+            var source = ("<p>Source: " +response.articles[j].source.name + "</p>"+"<br>");
             
-            // $("#news").append("Rating: "+ response.status.totalResults + "<br>"+"<br>");
-            $("#row-news").append("<img src=" +response.articles[j].urlToImage + " width='200'><br>");
-            $("#row-news").append("<p>Link: " +response.articles[j].urlToImage + "</p>"+"<br>");
-            $("#row-news").append("<p>Content: " +response.articles[j].content + "</p>"+"<br>");
-            $("#row-news").append("<p>Description: " +response.articles[j].description + "</p>"+"<br>");
-            $("#row-news").append("<p>Published on: " +response.articles[j].publishedAt + "</p>"+"<br>");
-            $("#row-news").append("<p>Source: " +response.articles[j].source.name + "</p>"+"<br>");
             
+            var addRow = ("<div class='card'>"+ title + img + "<div class='card-body'><h5 class='card-title'>" + description + "</p><p class='card-text'>" + link + "</p></div></div>")
+
+                
+            $("#row-news").append(addRow);
+                
+               
+            
+
           }
 
     })
