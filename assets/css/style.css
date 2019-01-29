@@ -54,5 +54,9 @@ img{
     overflow: auto;
     background: transparent;
   }
-
+  hr{
+    border: 3px solid black;
+    border-radius: 5px;
+    background:black;
+  }
  

@@ -1,4 +1,5 @@
 $("#submit-button").on("click", function() {
+    $("#input-search").addClass("fadeOutUpBig");
     $('.card-columns').html('');
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
@@ -21,8 +22,12 @@ $("#submit-button").on("click", function() {
             // "User-Agent":  "My Library (https://github.com/bullsean/project1)",
             "Accept" : "application/json"
         }
-    }).then(function(response) {
-        console.log(response);
+    }).then(function(joke) {
+        console.log(joke);
+        $("#row-joke").append("<div class='card'><h2>Dad Joke</h2><div class='card-body'><p>" + joke.joke + "</p></div></div>")
+
+                
+            
     });
 
 
