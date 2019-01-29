@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 
-<body class="text-center" style="background-image: url(assets/images/beach-view.jpeg)">
+<body class="text-center">
 
     <div class="container">
         <header class="top-header">
@@ -37,7 +37,7 @@
             <br>
             <article>
                     <div class="form-group">
-                            <label for="keyword-input" id="keyword">Enter a keyword</label>
+                            <label for="keyword-input" id="keyword">Enter a keyword!</label>
                             <input class="form-control" id="keyword-input" type="text" placeholder="keyword">
                     </div>
             </article>
@@ -49,22 +49,42 @@
         </main>
     </div>
 
-    <div class="container">
-        <div class="col-sm-4"></div>
-
-        <div class="col-sm-12">
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
                 <h2>Here's what the weather looks:</h2>
+                
                 <div class="row" id="row-weather">
-                </div>
-                <h2>Headline news for today!</h2>
-                <div class="row" id="row-news">
                     
                 </div>
-
+                
+            </div>
+            
         </div>
-
-        <div class="col-sm-4"></div>   
+        
+        <div class="row">
+            
+            
+            
+            <div class="col-sm-8">
+                    <h2>Headline news for today!</h2>
+                
+                <div class="row-news" style="margin-bottom:5%;">
+                        
+                        <div class="card-columns" id="row-news">
+                            
+                        </div>
+                        
+                        
+                </div>
+                    
+            </div>
+            
+            <div class="col-sm-4">
+                     <h2>Some Fun Questions for you</h2>   
+            </div>
+        </div> 
+                    
     </div>
 
     
