@@ -25,3 +25,5 @@ BONUS: Place for jokes at the end
 
 
 Personal Assistant / PersonalMe / Assist / AssistMe / MyDay / TellMe / AM
+
+Wireframe: https://wireframe.cc/fE8RzW
