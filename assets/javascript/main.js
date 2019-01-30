@@ -54,9 +54,8 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then (function(response){
         console.log(response);
-        $(".row-news").append("<h2>Headline news for today!</h2>");
         for (var j = 0; j < response.articles.length; j++) {
-
+            
             var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
             var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
             var title = ("<p style='font-weight: bolder;'>Title: " +response.articles[j].title + "</p>"+"<br>");
@@ -67,6 +66,7 @@ $("#submit-button").on("click", function() {
             
             var addRow = ("<div class='card'>"+ title + img + "<div class='card-body'><h5 class='card-title'>" + description + "</p><p class='card-text'>" + link + "</p></div></div>")
             
+            $(".row-news").append("<h2>Headline news for today!</h2>");
             $(".row-news").append("<div id='row-news'></div>") 
             $("#row-news").addClass("card-columns")   
             $("#row-news").append(addRow);
