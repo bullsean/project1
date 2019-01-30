@@ -11,12 +11,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Viga" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 </head>
 
-<body class="text-center" style="background-image: url(assets/images/beach-view.jpeg)">
 
-    <div class="container">
+<body class="text-center">
+
+    <div class="container animated slower" id="input-search">
         <header class="top-header">
             <h1>SmallTalk</h1>
         </header>
@@ -37,6 +39,7 @@
             </article>
             <br>
             <article>
+
                 <div class="form-group">
                     <label for="keyword-input" id="keyword">Enter a keyword</label>
                     <input class="form-control" id="keyword-input" type="text" placeholder="keyword">
@@ -50,27 +53,63 @@
         </main>
     </div>
 
-    <div class="container">
-        <h2>Here's what the weather looks:</h2>
-        <div class="row" id="row-weather">
-
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Here's what the weather looks:</h2>
+                
+                <div class="row" id="row-weather">
+                    
+                </div>
+                
+            </div>
+            
         </div>
-
-        <h2>Headline news for today!</h2>
-        <div class="row" id="row-news">
-        </div>
-    </div>
-    <div class="card-columns">
-        <div class="card" id="image">
-
-            <div class="card-body">
-                <h5 class="card-title" id="card-title">Card title that wraps to a new line</h5>
-                <p class="card-text" id="card-text">This is a longer card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</p>
+        
+        <div class="row">
+            <div class="col-sm-8">
+                    <h2>Headline news for today!</h2>
+                
+                <div class="row-news" style="margin-bottom:5%;">
+                        
+                        <div class="card-columns" id="row-news">
+                            
+                        </div>
+                        
+                        
+                </div>
+                    
+            </div>
+            
+            <div class="col-sm-4">
+                     <h2>Some Fun Questions for you</h2>   
             </div>
         </div>
-
+        
+        <div class="row">
+            <div class="col-sm-8">
+                    
+                
+                <div class="row-joke" style="margin-bottom:5%;">
+                        
+                        <div class="card-columns" id="row-joke">
+                            
+                        </div>
+                        
+                        
+                </div>
+                    
+            </div>
+            
+            <div class="col-sm-4">
+                        
+            </div>
+        </div>
+                    
     </div>
+
+    
+
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
