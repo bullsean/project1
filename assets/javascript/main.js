@@ -1,13 +1,15 @@
 $("#submit-button").on("click", function() {
     $("#input-search").addClass("fadeOutUpBig");
     $('.card-columns').html('');
+    $("#row-weather").html('');
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
     var city = $("#city-input").val();
     var keyword = $("#keyword-input").val();
-    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
     var zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?q=" + city;
     var newsUrl = 'https://newsapi.org/v2/top-headlines?source=bbc-news&q='+ keyword +'&apiKey=7366515f5173476eb141e59de078bc65';
+    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/forecast?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
+
     $.ajax({
         url: triviaQueryURL,
         method: "GET"
@@ -19,8 +21,7 @@ $("#submit-button").on("click", function() {
         url: jokeQueryURL,
         method: "GET",
         headers: {
-            // "User-Agent":  "My Library (https://github.com/bullsean/project1)",
-            "Accept" : "application/json"
+           "Accept" : "application/json"
         }
     }).then(function(joke) {
         console.log(joke);
@@ -36,6 +37,19 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
+        for (var i = 0; i<response.list.length ; i++) {
+            if (i === 3 || i === 11 || i === 19 || i === 27 || i === 35) {
+                console.log('This is loop number' + i);
+                var weatherDiv = $('<div class="card" style="width: 10rem;"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
+                $("#row-weather").append(weatherDiv);
+                $('#weatherDay'+ i +'-title').text(response.list[i].weather[0].main);
+                $('#weatherPicDay'+ i +'').html('<img class="card-img-top" id="weatherPicDay1" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
+                $('#weatherDate'+ i +'').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
+                
+            }
+        }
+
+
     });
 
     $.ajax({
@@ -75,7 +89,6 @@ $("#submit-button").on("click", function() {
             
 
           }
-
 
     })
 
