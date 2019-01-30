@@ -1,7 +1,22 @@
-$("#submit-button").on("click", function() {
-    $("#input-search").addClass("fadeOutUpBig");
+function empty(){
+    
     $('.card-columns').html('');
     $("#row-weather").html('');
+    // $("#welcome").text('');
+    $(".row-weather").html('');
+    $(".row-news").html('');
+    $("#city-input").val('');
+    $("#name-input").val('');
+    $("#keyword-input").val('');
+
+}
+
+$("#submit-button").on("click", function() {
+    // $("#input-search").addClass("fadeOutUpBig");
+    
+
+    var name = $("#name-input").val();
+    $("#container-fluid2").prepend("<h3 id='welcome'>Welcome " + name +". please scroll down for your weather and news</h3>")
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
     var jokeQueryURL = "https://icanhazdadjoke.com/";
     var city = $("#city-input").val();
@@ -37,13 +52,21 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
+        $(".row-weather").append("<h2>Here's what the weather looks:</h2>");
+        $(".row-weather").append("<div class='card-deck' id='row-weather'></div>");
         for (var i = 0; i<response.list.length ; i++) {
             if (i === 3 || i === 11 || i === 19 || i === 27 || i === 35) {
+
                 console.log('This is loop number' + i);
-                var weatherDiv = $('<div class="card" style="width: 10rem;"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
+
+                var weatherDiv = $('<div class="card"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
+
                 $("#row-weather").append(weatherDiv);
+
                 $('#weatherDay'+ i +'-title').text(response.list[i].weather[0].main);
+
                 $('#weatherPicDay'+ i +'').html('<img class="card-img-top" id="weatherPicDay1" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
+
                 $('#weatherDate'+ i +'').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
                 
             }
@@ -68,6 +91,8 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then (function(response){
         console.log(response);
+        $(".row-news").append("<h2>Headline news for today!</h2>");
+        $(".row-news").append("<div id='row-news'></div>"); 
         for (var j = 0; j < response.articles.length; j++) {
             
             var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
@@ -80,8 +105,6 @@ $("#submit-button").on("click", function() {
             
             var addRow = ("<div class='card'>"+ title + img + "<div class='card-body'><h5 class='card-title'>" + description + "</p><p class='card-text'>" + link + "</p></div></div>")
             
-            $(".row-news").append("<h2>Headline news for today!</h2>");
-            $(".row-news").append("<div id='row-news'></div>") 
             $("#row-news").addClass("card-columns")   
             $("#row-news").append(addRow);
                 
@@ -91,7 +114,7 @@ $("#submit-button").on("click", function() {
           }
 
     })
-
+    empty();
 });
 
 
