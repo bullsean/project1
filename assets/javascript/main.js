@@ -13,7 +13,10 @@ function empty(){
 }
 
 $("#submit-button").on("click", function() {
-    // $("#input-search").addClass("fadeOutUpBig");
+    $("#input-search").addClass("fadeOutUpBig");
+    $("#container-fluid2").addClass("fadeInUpBig");
+    $("#container-fluid2").attr("style", "margin-top:-70vh");
+    
     
     
     var name = $("#name-input").val();
@@ -33,7 +36,7 @@ $("#submit-button").on("click", function() {
     }).then(function(response) {
         console.log(response);
         console.log(response.results[0].question);
-        $(".row-question").append("<h4>Some Fun Questions for you</h4><div class='card'><p>"+ response.results[0].question + "?</p></div><div class='card'><p>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li> </p></div>")
+        $(".row-question").append("<h4>Some Fun Questions for you</h4><div class='card'><p>"+ response.results[0].question + "?</p></div><div class='card'><p>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li><li>" + response.results[0].correct_answer + "</li></p></div>")
         $(".qbutton").append("<button id='qbutton' class=' btn btn-danger'>Click to reveal!</button>")
         $("#qbutton").on("click", function(){
             
