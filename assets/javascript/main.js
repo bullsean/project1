@@ -15,8 +15,9 @@ function empty(){
 $("#submit-button").on("click", function() {
     $("#input-search").addClass("fadeOutUpBig");
     $("#container-fluid2").addClass("fadeInUpBig");
-    $("#container-fluid2").attr("style", "margin-top:-70vh");
-    
+    $("#container-fluid2").attr("style", "margin-top:-75vh");
+    $("#weatherQuestion").toggle();
+    $("#newsQuestion").toggle();
     
     
     var name = $("#name-input").val();
@@ -64,22 +65,24 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        $(".row-weather").append("<h4>Here's what the weather looks:</h4>");
-        $(".row-weather").append("<div class='card-deck' id='row-weather'></div>");
+        
+
         for (var i = 0; i<response.list.length ; i++) {
             if (i === 3 || i === 11 || i === 19 || i === 27 || i === 35) {
-
                 console.log('This is loop number' + i);
-
-                var weatherDiv = $('<div class="card"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
-
+                console.log(response.list[i].main.temp)
+                var kelTemperature = response.list[i].main.temp;
+                var weatherType = response.list[0].weather[0].description;
+                
+                function tempConversion(kelTemperature) {
+                    return Math.ceil(((kelTemperature - 273.15) * 1.80) +32);
+                };
+                var weatherDiv = $('<div class="card" style="width: 8rem;"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
                 $("#row-weather").append(weatherDiv);
-
-                $('#weatherDay'+ i +'-title').text(response.list[i].weather[0].main);
-
-                $('#weatherPicDay'+ i +'').html('<img class="card-img-top" id="weatherPicDay1" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
-
+                $('#weatherDay'+ i +'-title').text(tempConversion(kelTemperature) + "°F");
+                $('#weatherPicDay'+ i +'').html('<img class="card-img-top" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
                 $('#weatherDate'+ i +'').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
+                $("#weatherQ").text(weatherType);
                 
             }
         }
