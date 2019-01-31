@@ -50,6 +50,10 @@ body{
     margin: 0 auto;
 }
 
+#weatherQuestions {
+    text-align: left;
+}
+
 img{
     margin: auto;
     width: 100%;

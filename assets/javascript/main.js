@@ -46,6 +46,7 @@ $("#submit-button").on("click", function() {
                 console.log('This is loop number' + i);
                 console.log(response.list[i].main.temp)
                 var kelTemperature = response.list[i].main.temp;
+                var weatherType = response.list[0].weather[0].description;
                 
                 function tempConversion(kelTemperature) {
                     return Math.ceil(((kelTemperature - 273.15) * 1.80) +32);
@@ -55,6 +56,7 @@ $("#submit-button").on("click", function() {
                 $('#weatherDay'+ i +'-title').text(tempConversion(kelTemperature) + "°F");
                 $('#weatherPicDay'+ i +'').html('<img class="card-img-top" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
                 $('#weatherDate'+ i +'').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
+                $("#weatherQ").text(weatherType);
                 
             }
         }

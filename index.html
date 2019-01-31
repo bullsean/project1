@@ -34,7 +34,7 @@
             <br>
             <article>
                 <div class="form-group">
-                    <label for="city-input" id="city">What's your general location?</label>
+                    <label for="city-input" id="city">What's your meeting location?</label>
                     <input class="form-control" id="city-input" type="text" placeholder="City">
                 </div>
             </article>
@@ -57,67 +57,88 @@
     <div class="container-fluid animated slower" id="content">
         <div class="row">
             <div class="col-sm-8">
-                <h2>Here's what the weather looks:</h2>
-                
+                <h2>Here's what the weather looks in your area:</h2>
                 <div class="row" id="row-weather">
                     
                 </div>
                 
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" id="weatherQuestions">
                 <h2>Ask a few of these questions:</h2>
                 
+                <ul>
+                    <li>
+                        What do you think of the forecasted <span id="weatherQ"></span>?
+                    </li>
+                    <li>
+                        What's you favorite type of weather?
+                    </li>
+                    <li>
+                        Feeling adventurous? Try this: If you were a type of weather, what would you be?
+                    </li>
+                </ul>
                 <div class="row" id="row-weather">
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
-        
+
         <div class="row">
             <div class="col-sm-4">
-                    <h2>Headline news for today!</h2>
-                
+                <h2>Headline news for today!</h2>
+
                 <div class="row-news" style="margin-bottom:5%;">
-                        
-                        <div class="card-columns" id="row-news">
-                            
-                        </div>
-                        
-                        
+
+                    <div class="card-columns" id="row-news">
+
+                    </div>
+
+
                 </div>
-                    
+
             </div>
-            
+
             <div class="col-sm-8">
-                     <h2>Some Fun Questions for you</h2>   
+                <h2>Some Fun Questions for you</h2>
+                <ul>
+                        <li>
+                            What do you think of the forecasted <span id="weatherQ"></span>?
+                        </li>
+                        <li>
+                            What's you favorite type of weather?
+                        </li>
+                        <li>
+                            Feeling adventurous? Try this: If you were a type of weather, what would you be?
+                        </li>
+                    </ul>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-sm-8">
-                    
-                
+
+
                 <div class="row-joke" style="margin-bottom:5%;">
-                        
-                        <div class="card-columns" id="row-joke">
-                            
-                        </div>
-                        
-                        
+
+                    <div class="card-columns" id="row-joke">
+
+                    </div>
+
+
                 </div>
-                    
+
             </div>
-            
+
             <div class="col-sm-4">
-                        
+
             </div>
         </div>
-                    
+
     </div>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
