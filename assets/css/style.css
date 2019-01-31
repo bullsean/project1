@@ -1,3 +1,8 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
 .top-header {
     font-family: 'PT Sans Narrow', cursive;
     margin-top: 10px;
@@ -21,15 +26,35 @@
     margin-top: 20px;
 }
 body{
-    background: url(../images/beach-view.jpeg);
-    color: whitesmoke;
+    background: url(../images/federico-bottos-4212-unsplash.jpg);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    box-sizing: border-box;
+    /* height: 100vh; */
+    padding: 10vw 0 5vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+}
+
+#weatherPicDay3, #weatherPicDay11, #weatherPicDay19, #weatherPicDay27, #weatherPicDay35 {
+    margin: 0 auto;
 }
 
 img{
     margin: auto;
     width: 100%;
     height: auto;
-    border: 5px solid white;
+    border: 2px solid white;
     border-radius: 1rem;
 }
 
@@ -38,9 +63,14 @@ img{
     background-color: #000e1a;
     background-image: url("https://www.transparenttextures.com/patterns/triangular.png");
     margin: 2%;
-    border: 5px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 1rem;
     padding: 2%;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem 0;
 }
 
 .text-muted {

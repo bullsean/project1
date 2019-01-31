@@ -18,22 +18,23 @@
 
 <body class="text-center">
 
-    <div class="container animated slower" id="input-search">
+    <div class="container-fluid animated slower" id="input-search">
         <header class="top-header">
             <h1>SmallTalk</h1>
+            <!-- Hey! I'm SmallTalk, your chatty little friend to help you out with that big interview, date or encounter. Do you suffer from social anxiety, or just simply don't necessarily like the small talk, I've got your back. -->
         </header>
         <br>
         <main class="middle-main">
             <article>
                 <div class="form-group">
-                    <label for="name-input" id="name">Please enter your name!</label>
+                    <label for="name-input" id="name">What's your name?</label>
                     <input class="form-control" id="name-input" type="text" placeholder="Name">
                 </div>
             </article>
             <br>
             <article>
                 <div class="form-group">
-                    <label for="city-input" id="city">Enter a city name!</label>
+                    <label for="city-input" id="city">What's your general location?</label>
                     <input class="form-control" id="city-input" type="text" placeholder="City">
                 </div>
             </article>
@@ -41,7 +42,7 @@
             <article>
 
                 <div class="form-group">
-                    <label for="keyword-input" id="keyword">Enter a keyword</label>
+                    <label for="keyword-input" id="keyword">Tell me something that interests your mate!</label>
                     <input class="form-control" id="keyword-input" type="text" placeholder="keyword">
                 </div>
             </article>
@@ -53,10 +54,18 @@
         </main>
     </div>
 
-    <div class="container-fluid ">
+    <div class="container-fluid animated slower delay-3s" id="content">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-8">
                 <h2>Here's what the weather looks:</h2>
+                
+                <div class="row" id="row-weather">
+                    
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                <h2>Ask a few of these questions:</h2>
                 
                 <div class="row" id="row-weather">
                     
@@ -67,7 +76,7 @@
         </div>
         
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                     <h2>Headline news for today!</h2>
                 
                 <div class="row-news" style="margin-bottom:5%;">
@@ -81,7 +90,7 @@
                     
             </div>
             
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                      <h2>Some Fun Questions for you</h2>   
             </div>
         </div>
