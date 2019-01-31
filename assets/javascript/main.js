@@ -1,6 +1,7 @@
 $("#submit-button").on("click", function() {
     $("#input-search").addClass("fadeOutUpBig");
     $("#content").addClass("fadeInUpBig");
+    $("#content").attr('style', "margin-top: -100vh;");
     $('.card-columns').html('');
     $("#row-weather").html('');
     var triviaQueryURL = "https://opentdb.com/api.php?amount=10";
