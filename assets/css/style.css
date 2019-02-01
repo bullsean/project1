@@ -26,6 +26,7 @@ html {
     margin-top: 20px;
 }
 body{
+<<<<<<< HEAD
     background: url(../images/federico-bottos-4212-unsplash.jpg);
     color: #fff;
     margin: 0;
@@ -52,6 +53,14 @@ body{
 
 #weatherQuestions {
     text-align: left;
+=======
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: aliceblue;
+    /* background: url(../images/beach-view.jpeg); */
+    /* color: whitesmoke; */
+>>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
 }
 
 img{
@@ -59,16 +68,27 @@ img{
     width: 100%;
     height: auto;
     border: 2px solid white;
+<<<<<<< HEAD
     border-radius: 1rem;
+=======
+    border-radius: 0.25rem;
+>>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
 }
 
 .card{
+
+    background: #136a8a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
-    background-color: #000e1a;
-    background-image: url("https://www.transparenttextures.com/patterns/triangular.png");
     margin: 2%;
+<<<<<<< HEAD
     border: 2px solid rgb(255, 255, 255);
     border-radius: 1rem;
+=======
+    border: 1.25px solid rgb(255, 255, 255);
+    border-radius: 0.25rem;
+>>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
     padding: 2%;
 }
 
@@ -78,19 +98,38 @@ img{
 }
 
 .text-muted {
-    color: #000000!important;
+    color: #e2e2e2!important;
 }
 
 .row-news {
     background-color: lightblue;
     width: 100%;
-    height: 310px;
+    height: 510px;
     overflow: auto;
     background: transparent;
   }
-  hr{
-    border: 3px solid black;
-    border-radius: 5px;
-    background:black;
-  }
- 
+.card-body{
+    padding: 0%;
+}
+
+#input-search{
+    
+    background: #EB3349;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+h4{
+    text-align: left;
+}
+
+.top-header h1{
+    font-size: 4.5em;
+    font-weight: 900;
+    text-align: left;
+    margin-left: 2%;
+}
+#weatherQuestion, #newsQuestion{
+    display: none;
+}
