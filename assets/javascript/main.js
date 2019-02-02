@@ -37,12 +37,13 @@ $("#submit-button").on("click", function() {
     }).then(function(response) {
         console.log(response);
         console.log(response.results[0].question);
-        $(".row-question").append("<h4 class='h4'>Lull in the convo? Here is a trivia question!</h4><div class='card trivia-text'><p class='p'>"+ response.results[0].question + "?</p></div><div class='card'><p class='p'>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li><li>" + response.results[0].correct_answer + "</li></p></div>")
-        $(".qbutton").append("<button id='qbutton' class=' btn btn-danger'>Click to reveal!</button>")
+        $(".row-question").append("<h4 class='h4'>Lull in the convo? Here is a trivia question!</h4><div class='card trivia-text'><p class='p'>"+ response.results[0].question + "?</p></div><div class='card trivia'><p class='p'>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li><li>" + response.results[0].correct_answer + "</li></p></div>")
+        $(".qbutton").append("<button id='qbutton' class=' btn btn-danger'>Click to reveal!</button><br><br>")
         $("#qbutton").on("click", function(){
             
-            $(".answer").append("<div class='card card-body'>" + response.results[0].correct_answer + " </div>")
+            $(".answer").append("<div class='card card-body'>" + response.results[0].correct_answer + " </div><br><br>")
             $("#qbutton").hide();
+            $(".trivia").hide();
         })
     });
 
@@ -54,7 +55,7 @@ $("#submit-button").on("click", function() {
         }
     }).then(function(joke) {
         console.log(joke);
-        $(".row-joke").append("<h4 class='h4'>Have a laugh with your mate!</h4><div class='card'><div class='card-body trivia-text'><p class='p'>" + joke.joke + "</p></div></div>");
+        $(".row-joke").append("<h4 class='h4'>Have a laugh with your mate!</h4><div class='card'><div class='card-body trivia-text'><p class='p'>" + joke.joke + "</p></div></div><br><br>");
 
                 
             
@@ -113,7 +114,7 @@ $("#submit-button").on("click", function() {
             
             var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
             var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
-            var title = ("<p style='font-weight: bolder;'>Title: " +response.articles[j].title + "</p>"+"<br>");
+            var title = ("<h5 style='font-weight: bold;'>" +response.articles[j].title + "</h5>"+"<br>");
             var description = ("Description: " +response.articles[j].description + "<br>");
             var published = ("Published on: " +response.articles[j].publishedAt + "<br>");
             var source = ("<p>Source: " +response.articles[j].source.name + "</p>"+"<br>");
