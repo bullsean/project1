@@ -1,10 +1,15 @@
 .top-header {
     font-family: 'PT Sans Narrow', cursive;
     margin-top: 10px;
+    letter-spacing: 0.2em;
 }
 
 #name, #city, #state, #keyword{
-    font-family: 'Viga', 'cursive';
+    /* font-family: 'Viga', cursive; */
+    /* font-family: 'Varela Round', sans-serif; */
+    /* font-family: 'Handlee', cursive; */
+   font-size: 22pt; 
+   font-family: 'Shadows Into Light Two', cursive;
 }
 
 #name-input, #city-input, #keyword-input {
@@ -21,42 +26,89 @@
     margin-top: 20px;
 }
 body{
-    background: url(../images/beach-view.jpeg);
-    color: whitesmoke;
+    background:black;
+
+    color: rgb(16, 73, 122);
+    /* background: url(../images/beach-view.jpeg); */
+    /* color: whitesmoke; */
 }
 
 img{
     margin: auto;
     width: 100%;
     height: auto;
-    border: 5px solid white;
-    border-radius: 1rem;
+    border: 2px solid white;
+    border-radius: 0.25rem;
 }
 
 .card{
-    
-    background-color: #000e1a;
-    background-image: url("https://www.transparenttextures.com/patterns/triangular.png");
+    background-color: #98d4f5;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     margin: 2%;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 1rem;
+    border: 1.25px solid rgb(255, 255, 255);
+    border-radius: 0.25rem;
     padding: 2%;
 }
 
 .text-muted {
-    color: #000000!important;
+    color: #4b4848!important;
 }
 
 .row-news {
     background-color: lightblue;
     width: 100%;
-    height: 310px;
+    height: 510px;
     overflow: auto;
     background: transparent;
   }
-  hr{
-    border: 3px solid black;
-    border-radius: 5px;
-    background:black;
-  }
- 
+.card-body{
+    padding: 1.25rem 0;
+
+}
+#weatherPicDay3, #weatherPicDay11, #weatherPicDay19, #weatherPicDay27, #weatherPicDay35 {
+    margin: 0 auto;
+}
+#input-search{
+    background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+
+.top-header h1{
+    font-size: 4.5em;
+    font-weight: 900;
+    text-align: left;
+    margin-left: 2%;
+}
+#weatherQuestion, #newsQuestion{
+    display: none;
+}
+.card-columns{
+    margin-right: 1%;
+}
+li{
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18pt;
+    text-align: left;
+    padding: 5px;
+}
+trivia-text{
+    font-family: 'Shadows Into Light Two', cursive;
+}
+.p, .answer{
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 20pt;
+
+}
+.h4{
+    font-family: 'Sarabun', sans-serif;
+    font-size: 24pt;
+    color: whitesmoke;
+}
+label,h2,h1,ol{
+    color: whitesmoke;
+}

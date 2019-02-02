@@ -8,32 +8,34 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Viga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Viga|Handlee|Shadows+Into+Light+Two|Varela+Round|Sarabun" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ duration: 1000 })
+    </script>
 </head>
 
 
 <body class="text-center">
+    <header class="top-header">
+        <h1>SmallTalk</h1>
+    </header>
 
-    <div class="container animated slower" id="input-search">
-        <header class="top-header">
-            <h1>SmallTalk</h1>
-        </header>
+    <div class="container-fluid animated slower" id="input-search">
         <br>
         <main class="middle-main">
             <article>
                 <div class="form-group">
-                    <label for="name-input" id="name">Please enter your name!</label>
+                    <label for="name-input" id="name">What's your name?</label>
                     <input class="form-control" id="name-input" type="text" placeholder="Name">
                 </div>
             </article>
             <br>
             <article>
                 <div class="form-group">
-                    <label for="city-input" id="city">Enter a city name!</label>
+                    <label for="city-input" id="city">What's your meeting location?</label>
                     <input class="form-control" id="city-input" type="text" placeholder="City">
                 </div>
             </article>
@@ -41,53 +43,68 @@
             <article>
 
                 <div class="form-group">
-                    <label for="keyword-input" id="keyword">Enter a keyword</label>
-                    <input class="form-control" id="keyword-input" type="text" placeholder="keyword">
+                    <label for="keyword-input" id="keyword">Tell me something that interests your mate!</label>
+                    <input class="form-control" id="keyword-input" type="text" placeholder="Keyword">
                 </div>
             </article>
             <br>
             <div class="button">
-                <button type="button" class="btn btn-lg btn-light" id="submit-button">Submit</button>
+                <button type="button" class="btn btn-lg btn-light" id="submit-button">Let's talk!</button>
             </div>
-
+            <br>
         </main>
     </div>
-
-    <div class="container-fluid ">
+    
+    <br>
+    <br>
+    <div class="container-fluid animated slower" id="container-fluid2">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>Here's what the weather looks:</h2>
-                
-                <div class="row" id="row-weather">
+            <div class="col-md-4">
+                <div id="weatherQuestion">
+                    
+                    <h2 style="font-family: 'Sarabun', sans-serif">Ask a few of these questions:</h2><ol><li>What do you think of the forecasted <span id="weatherQ"></span>?</li><li>What's you favorite type of weather?</li><li>Feeling adventurous? Try this: If you were a type of weather, what would you be?</li></ol>
+                </div>
+            </div>
+            <div style="display: flex" class="col-md-8 row-weather" id="row-weather">
                     
                 </div>
                 
             </div>
             
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-8">
-                    <h2>Headline news for today!</h2>
-                
-                <div class="row-news" style="margin-bottom:5%;">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
                         
-                        <div class="card-columns" id="row-news">
+                        <div class="row-news" style="margin-bottom:5%;">
+                            </div>
                             
                         </div>
-                        
-                        
-                </div>
+                    </div>
                     
-            </div>
-            
-            <div class="col-sm-4">
-                     <h2>Some Fun Questions for you</h2>   
-            </div>
-        </div>
-        
+                    <div class="col-md-4">
+                        
+                        
+                        <div id="newsQuestion">
+                            <h2 style="font-family: 'Sarabun', sans-serif">Or try a few of these questions:</h2>
+                            <ol>
+                                <li>What do you think about what's happening in the news this week?</li>
+                                <li>I found this article and thought it was interesting! What do you think?</li>
+                                <li>Feeling controversial? Mention something about Trump or politics!</li>
+                            </ol>
+                        </div>   
+                        
+                        
+                    </div>
+                </div>
+                
+                
+                <br>
+                <br>
+                <br>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-md-6">
                     
                 
                 <div class="row-joke" style="margin-bottom:5%;">
@@ -101,8 +118,10 @@
                     
             </div>
             
-            <div class="col-sm-4">
-                        
+            <div class="col-md-6">
+                    <div class="row-question"></div>
+                    <div class="answer"></div>
+                    <div class="qbutton"></div>
             </div>
         </div>
                     
@@ -117,6 +136,16 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        <script>
+
+                ScrollReveal().reveal('#name', { delay: 300 })
+                ScrollReveal().reveal('#name-input', { delay: 800 })
+                ScrollReveal().reveal('#city', { delay: 1300 })
+                ScrollReveal().reveal('#city-input', { delay: 1800 })
+                ScrollReveal().reveal('#keyword', { delay: 2300 })
+                ScrollReveal().reveal('#keyword-input', { delay: 2800 })
+                ScrollReveal().reveal('#submit-button', { delay: 3300 })
+            </script>
     <script src="assets/javascript/main.js"></script>
 </body>
 
