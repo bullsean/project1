@@ -31,7 +31,7 @@ Future enhancements:
 Restaurants (already connected Zomato API - just needs to be built out)
 Weather/news update with zipcodes
 Trivia would become quiz - interactive part of encounter
-Mobily responsive, and capable or automatically recognizing cues on cellular device to prompt reminders.
+
 
 
         
