@@ -15,7 +15,7 @@ function empty(){
 $("#submit-button").on("click", function() {
     $("#input-search").addClass("fadeOutUpBig");
     $("#container-fluid2").addClass("fadeInUpBig");
-    $("#container-fluid2").attr("style", "margin-top:-75vh");
+    $("#container-fluid2").attr("style", "margin-top:-100vh");
     $("#weatherQuestion").toggle();
     $("#newsQuestion").toggle();
     
@@ -65,21 +65,12 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-<<<<<<< HEAD
-
-
         for (var i = 0; i < response.list.length; i++) {
-=======
-        
-
-        for (var i = 0; i<response.list.length ; i++) {
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
             if (i === 3 || i === 11 || i === 19 || i === 27 || i === 35) {
                 console.log('This is loop number' + i);
                 console.log(response.list[i].main.temp)
                 var kelTemperature = response.list[i].main.temp;
                 var weatherType = response.list[0].weather[0].description;
-<<<<<<< HEAD
 
                 function tempConversion(kelTemperature) {
                     return Math.ceil(((kelTemperature - 273.15) * 1.80) + 32);
@@ -91,19 +82,6 @@ $("#submit-button").on("click", function() {
                 $('#weatherDate' + i + '').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
                 $("#weatherQ").text(weatherType);
 
-=======
-                
-                function tempConversion(kelTemperature) {
-                    return Math.ceil(((kelTemperature - 273.15) * 1.80) +32);
-                };
-                var weatherDiv = $('<div class="card" style="width: 8rem;"><div id="weatherPicDay'+ i +'" style="width: 50px"></div><div class="card-body"><h5 class="card-title" id="weatherDay'+ i +'-title" style="color: black"></h5><p class="card-text" id="weatherDate'+ i +'" style="color: black"></p></div></div>');
-                $("#row-weather").append(weatherDiv);
-                $('#weatherDay'+ i +'-title').text(tempConversion(kelTemperature) + "°F");
-                $('#weatherPicDay'+ i +'').html('<img class="card-img-top" src="https://openweathermap.org/img/w/' + response.list[i].weather[0].icon +'.png" alt="Card image cap">');
-                $('#weatherDate'+ i +'').text(moment(response.list[i].dt_txt).format('ddd, MMM D'));
-                $("#weatherQ").text(weatherType);
-                
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
             }
         }
 
@@ -129,20 +107,6 @@ $("#submit-button").on("click", function() {
         $(".row-news").append("<h4>Headline news for today!</h4>");
         $(".row-news").append("<div id='row-news'></div>"); 
         for (var j = 0; j < response.articles.length; j++) {
-<<<<<<< HEAD
-
-            var img = ("<img src=" + response.articles[j].urlToImage + "><br>");
-            var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
-            var title = ("<p style='font-weight: bolder;'>Title: " + response.articles[j].title + "</p>" + "<br>");
-            var description = ("Description: " + response.articles[j].description + "<br>");
-            var published = ("Published on: " + response.articles[j].publishedAt + "<br>");
-            var source = ("<p>Source: " + response.articles[j].source.name + "</p>" + "<br>");
-
-
-            var addRow = ("<div class='card'>" + title + img + "<div class='card-body'><h5 class='card-title'>" + description + "</p><p class='card-text'>" + link + "</p></div></div>")
-
-
-=======
             
             var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
             var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
@@ -155,7 +119,6 @@ $("#submit-button").on("click", function() {
             var addRow = ("<div class='card'>"+ title + img + "<div class='card-body'><h5 class='card-title'>" + description + "</p><p class='card-text'>" + link + "</p></div></div>")
             
             $("#row-news").addClass("card-columns")   
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
             $("#row-news").append(addRow);
 
 

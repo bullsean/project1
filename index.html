@@ -12,24 +12,28 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Viga" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ duration: 1000 })
+        .sr .row-news  {
+        visibility: hidden;
+        }
+</style>
+    </script>
 
 </head>
 
 
 <body class="text-center">
     <header class="top-header">
-        <h1>SmallTalk</h1>
+        <h1 id="logo">SmallTalk</h1>
     </header>
 
-<<<<<<< HEAD
     <div class="container-fluid animated slower" id="input-search">
-        <header class="top-header">
+        <!-- <header class="top-header">
             <h1>SmallTalk</h1>
-            <!-- Hey! I'm SmallTalk, your chatty little friend to help you out with that big interview, date or encounter. Do you suffer from social anxiety, or just simply don't necessarily like the small talk, I've got your back. -->
-        </header>
-=======
-    <div class="container-fluid animated" id="input-search">
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
+            Hey! I'm SmallTalk, your chatty little friend to help you out with that big interview, date or encounter. Do you suffer from social anxiety, or just simply don't necessarily like the small talk, I've got your back.
+        </header> -->
         <br>
         <main class="middle-main">
             <article>
@@ -60,15 +64,6 @@
             <br>
         </main>
     </div>
-<<<<<<< HEAD
-
-    <div class="container-fluid animated slower" id="content">
-        <div class="row">
-            <div class="col-sm-8">
-                <h2>Here's what the weather looks in your area:</h2>
-                <div class="row" id="row-weather">
-                    
-=======
     <br>
     <br>
     <div class="container-fluid animated" id="container-fluid2">
@@ -76,72 +71,19 @@
             <div class="col-md-4">
                 <div id="weatherQuestion">
 
-                        <h2>Ask a few of these questions:</h2><ul><li>What do you think of the forecasted <span id="weatherQ"></span>?</li><li>What's you favorite type of weather?</li><li>Feeling adventurous? Try this: If you were a type of weather, what would you be?</li></ul>
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
+                    <h2>Ask a few of these questions:</h2>
+                    <ul>
+                        <li>What do you think of the forecasted <span id="weatherQ"></span>?</li>
+                        <li>What's you favorite type of weather?</li>
+                        <li>Feeling adventurous? Try this: If you were a type of weather, what would you be?</li>
+                    </ul>
                 </div>
             </div>
             <div style="display: flex" class="col-md-8 row-weather" id="row-weather">
-          
-            </div>
-            <div class="col-sm-4" id="weatherQuestions">
-                <h2>Ask a few of these questions:</h2>
-                
-                <ul>
-                    <li>
-                        What do you think of the forecasted <span id="weatherQ"></span>?
-                    </li>
-                    <li>
-                        What's you favorite type of weather?
-                    </li>
-                    <li>
-                        Feeling adventurous? Try this: If you were a type of weather, what would you be?
-                    </li>
-                </ul>
-                <div class="row" id="row-weather">
-
-                </div>
 
             </div>
 
         </div>
-<<<<<<< HEAD
-
-        <div class="row">
-            <div class="col-sm-4">
-                <h2>Headline news for today!</h2>
-
-                <div class="row-news" style="margin-bottom:5%;">
-
-                    <div class="card-columns" id="row-news">
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-sm-8">
-                <h2>Some Fun Questions for you</h2>
-                <ul>
-                        <li>
-                            What do you think of the forecasted <span id="weatherQ"></span>?
-                        </li>
-                        <li>
-                            What's you favorite type of weather?
-                        </li>
-                        <li>
-                            Feeling adventurous? Try this: If you were a type of weather, what would you be?
-                        </li>
-                    </ul>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-8">
-
-
-=======
         <br>
         <br>
         <div class="row">
@@ -150,27 +92,31 @@
 
                     <div class="row-news" style="margin-bottom:5%;">
                     </div>
-                        
+
                 </div>
             </div>
-            
-            <div class="col-md-4">
-                
 
-                    <div id="newsQuestion">
-                        <h2>Ask a few of these questions:</h2><ul><li>What do you think of the forecasted <span id="weatherQ"></span>?</li><li>What's you favorite type of weather?</li><li>Feeling adventurous? Try this: If you were a type of weather, what would you be?</li></ul>
-                    </div>   
-                    
-               
+            <div class="col-md-4">
+
+
+                <div id="newsQuestion">
+                    <h2>Ask a few of these questions:</h2>
+                    <ul>
+                        <li>What do you think of the forecasted <span id="weatherQ"></span>?</li>
+                        <li>What's you favorite type of weather?</li>
+                        <li>Feeling adventurous? Try this: If you were a type of weather, what would you be?</li>
+                    </ul>
+                </div>
+
+
             </div>
         </div>
         <br>
         <br>
         <div class="row">
             <div class="col-md-6">
-                    
-                
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
+
+
                 <div class="row-joke" style="margin-bottom:5%;">
 
                     <div class="card-columns" id="row-joke">
@@ -181,17 +127,11 @@
                 </div>
 
             </div>
-<<<<<<< HEAD
 
-            <div class="col-sm-4">
-
-=======
-            
             <div class="col-md-6">
-                    <div class="row-question"></div>
-                    <div class="answer"></div>
-                    <div class="qbutton"></div>
->>>>>>> 188ad1352a0ee3df829827e65ffb51bc2447d1a9
+                <div class="row-question"></div>
+                <div class="answer"></div>
+                <div class="qbutton"></div>
             </div>
         </div>
 
@@ -206,6 +146,17 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script>
+
+        ScrollReveal().reveal('#name', { delay: 300 })
+        ScrollReveal().reveal('#name-input', { delay: 800 })
+        ScrollReveal().reveal('#city', { delay: 1300 })
+        ScrollReveal().reveal('#city-input', { delay: 1800 })
+        ScrollReveal().reveal('#keyword', { delay: 2300 })
+        ScrollReveal().reveal('#keyword-input', { delay: 2800 })
+        ScrollReveal().reveal('#submit-button', { delay: 3300 })
+        ScrollReveal().reveal('.row-news', slideUp);
+    </script>
     <script src="assets/javascript/main.js"></script>
 </body>
 
