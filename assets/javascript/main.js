@@ -30,18 +30,20 @@ $("#submit-button").on("click", function() {
     var weatherQueryURL = "https://api.openweathermap.org/data/2.5/forecast?appid=029b688e6e7c61bcc27ad9ebfa0f39a6&q=" + city;
     
     empty();
-    $("#container-fluid2").prepend("<div class='welcome'><h3>Welcome " + name +". please scroll down for your weather and news</h3></div>")
+    $("#container-fluid2").prepend("<div class='welcome'><h3 class='h4'>Welcome " + name +"! Let's get started!</h3></div><br><br>")
     $.ajax({
         url: triviaQueryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response);
         console.log(response.results[0].question);
-        $(".row-question").append("<h4>Some Fun Questions for you</h4><div class='card'><p>"+ response.results[0].question + "?</p></div><div class='card'><p>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li><li>" + response.results[0].correct_answer + "</li></p></div>")
-        $(".qbutton").append("<button id='qbutton' class=' btn btn-danger'>Click to reveal!</button>")
+        $(".row-question").append("<h4 class='h4'>Lull in the convo? Here is a trivia question!</h4><div class='card trivia-text'><p class='p'>"+ response.results[0].question + "?</p></div><div class='card trivia'><p class='p'>Options: <li>"+ response.results[0].incorrect_answers[0] +"</li> <li>"+ response.results[0].incorrect_answers[1]+ "</li> <li>"+ response.results[0].incorrect_answers[2] + "</li><li>" + response.results[0].correct_answer + "</li></p></div>")
+        $(".qbutton").append("<button id='qbutton' class=' btn btn-danger'>Click to reveal!</button><br><br>")
         $("#qbutton").on("click", function(){
             
-            $(".answer").append("<div class='card card-body'>" + response.results[0].correct_answer + " </div>")
+            $(".answer").append("<div class='card card-body'>" + response.results[0].correct_answer + " </div><br><br>")
+            $("#qbutton").hide();
+            $(".trivia").hide();
         })
     });
 
@@ -53,7 +55,7 @@ $("#submit-button").on("click", function() {
         }
     }).then(function (joke) {
         console.log(joke);
-        $(".row-joke").append("<div class='card'><h4>Dad Joke</h4><div class='card-body'><p>" + joke.joke + "</p></div></div>");
+        $(".row-joke").append("<h4 class='h4'>Have a laugh with your mate!</h4><div class='card'><div class='card-body trivia-text'><p class='p'>" + joke.joke + "</p></div></div><br><br>");
 
 
 
@@ -104,13 +106,13 @@ $("#submit-button").on("click", function() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        $(".row-news").append("<h4>Headline news for today!</h4>");
+        $(".row-news").append("<h4 class='h4'>Headline news for today!</h4>");
         $(".row-news").append("<div id='row-news'></div>"); 
         for (var j = 0; j < response.articles.length; j++) {
             
             var img = ("<img src=" +response.articles[j].urlToImage + "><br>");
             var link = ("Link: <a href=" + response.articles[j].url + " target='_blank'> Click to view full news</a><br>");
-            var title = ("<p style='font-weight: bolder;'>Title: " +response.articles[j].title + "</p>"+"<br>");
+            var title = ("<h5 style='font-weight: bold;'>" +response.articles[j].title + "</h5>"+"<br>");
             var description = ("Description: " +response.articles[j].description + "<br>");
             var published = ("Published on: " +response.articles[j].publishedAt + "<br>");
             var source = ("<p>Source: " +response.articles[j].source.name + "</p>"+"<br>");
