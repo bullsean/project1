@@ -15,7 +15,7 @@ function empty(){
 $("#submit-button").on("click", function() {
     $("#input-search").addClass("fadeOutUpBig");
     $("#container-fluid2").addClass("fadeInUpBig");
-    $("#container-fluid2").attr("style", "margin-top:-100vh");
+    $("#container-fluid2").attr("style", "margin-top:-50vh");
     $("#weatherQuestion").toggle();
     $("#newsQuestion").toggle();
     
