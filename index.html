@@ -14,13 +14,17 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         ScrollReveal({ duration: 1000 })
+        .sr .row-news  {
+        visibility: hidden;
+        }
     </script>
+
 </head>
 
 
 <body class="text-center">
     <header class="top-header">
-        <h1>SmallTalk</h1>
+        <h1 id="logo">SmallTalk</h1>
     </header>
 
     <div class="container-fluid animated slower" id="input-search">
@@ -105,29 +109,29 @@
                 <br>
         <div class="row">
             <div class="col-md-6">
-                    
-                
+
+
                 <div class="row-joke" style="margin-bottom:5%;">
-                        
-                        <div class="card-columns" id="row-joke">
-                            
-                        </div>
-                        
-                        
+
+                    <div class="card-columns" id="row-joke">
+
+                    </div>
+
+
                 </div>
-                    
+
             </div>
-            
+
             <div class="col-md-6">
-                    <div class="row-question"></div>
-                    <div class="answer"></div>
-                    <div class="qbutton"></div>
+                <div class="row-question"></div>
+                <div class="answer"></div>
+                <div class="qbutton"></div>
             </div>
         </div>
-                    
+
     </div>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

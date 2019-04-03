@@ -1,3 +1,8 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
 .top-header {
     font-family: 'PT Sans Narrow', cursive;
     margin-top: 10px;
@@ -49,6 +54,12 @@ img{
     border: 1.25px solid rgb(255, 255, 255);
     border-radius: 0.25rem;
     padding: 2%;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem 0;
+    color: black;
 }
 
 .text-muted {
